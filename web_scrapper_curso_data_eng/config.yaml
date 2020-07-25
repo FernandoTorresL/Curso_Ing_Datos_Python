@@ -3,7 +3,11 @@ news_sites:
     url: https://www.eluniversal.com.mx
     queries:
       homepage_article_links: '.field-content a'
+      article_title: '.pane-content h1'
+      article_body: '.field-name-body'
   elpais:
     url: https://www.elpais.com
     queries:
       homepage_article_links: '.headline a'
+      article_body: ''
+      article_title: ''
