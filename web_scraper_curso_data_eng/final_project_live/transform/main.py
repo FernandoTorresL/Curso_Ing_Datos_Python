@@ -142,7 +142,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     df = main(args.filename)
-    print(df)
+    # print(df)
 
     resume_data = df['host'].value_counts()
-    print(resume_data)
+    # print(resume_data)

@@ -18,14 +18,14 @@ def main(filename):
     for index, row in articles.iterrows():
         logger.info('Loading article uid {} into DB'.format(row['uid']))
         article = Article(row['uid'],
-                          row['body'],
-                          row['host'],
-                          row['newspaper_uid'],
-                          row['n_tokens_body'],
-                          row['n_tokens_title'],
-                          row['title'],
-                          row['url']
-                          )
+                            row['body'],
+                            row['host'],
+                            row['newspaper_uid'],
+                            row['n_tokens_body'],
+                            row['n_tokens_title'],
+                            row['title'],
+                            row['url']
+                        )
 
         session.add(article)
 
@@ -35,8 +35,8 @@ def main(filename):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('filename',
-                          help = 'The file you want to load into the db',
-                          type = str)
+                        help = 'The file you want to load into the db',
+                        type = str)
 
     args = parser.parse_args()
 
