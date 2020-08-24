@@ -1,15 +1,15 @@
 # Curso de Ingeniería de Datos con Python, Platzi
-# Carpeta web_scrapper_curso_data_eng
+# Data Engineering with Python, Platzi
 
 ## Description
-Crear un Web Scrapper profesional siguiendo el flujo de trabajo de un Ingeniero de Datos
+Create a profesional web scraper follow the typical workflow of a Data Engineering
 
 ---
 
-## Importante
-Revisar la configuración de config.yaml para que funcione correctamente. Si los sitios configurados aquí han cambiado su estructura de html, podría no funcionar o dar resultados inesperados
+## Important
+Check first the configuration on config.yaml file. This file defines where are the urls, titles and body from each article and url
 
-Extracto de config.yaml:
+Example config.yaml:
 ```cmd
 eluniversal:
     url: https://www.eluniversal.com.mx
@@ -18,16 +18,15 @@ eluniversal:
       article_title: '.Encabezado-Articulo h1'
       article_body: '.field-name-body'
 ```
-**homepage_article_links** : Tags que contienen los artículos para revisarlos a detalle después.
+**homepage_article_links** : Tags containing the urls to the articles
 
-**article_title**: Tags dentro de cada artículo en particular que tiene el título.
+**article_title**: Inside each article, here define the tag for each article title
 
-**article_body**: Tags dentro de cada artículo en particular que tiene el cuerpo de la noticia.
+**article_body**: Inside each article, here define the tag for each article body
 
 ---
 
-Éste proyecto utiliza:
-
+This project use:
 - Python
 - Jupyter Notebook
 
@@ -41,38 +40,75 @@ You can use and change *<my_folder>* on this instruction to create a new folder
 git clone git@github.com:FernandoTorresL/Curso_Ing_Datos_Python.git <my_folder>
 ```
 
-### Change to working directory
-
-```terminal
-cd final_project_live
-```
-
----
-## Branch using_databases
-```cmd
-git checkout using_databases
-```
-
 ### How to test Web Scrapper
 
-Utilizar algún argumento configurado en **config.yaml**
-Ejemplo: eluniversal, elpais
-
 ```cmd
-cd final_project_live
+cd web_scraper_curso_data_eng/final_project_live
 python pipeline.py
 ```
 
-Esto generará un archivo newspaper.db de sqlite
+This create an newspaper.db database file
 
-Para consultar la base de datos:
-
+To query:
 ```cmd
 sqlite3
 .open newspaper.db
 .tables // articles
 select * from articles;
 ```
+
+---
+
+## Test some particular ETL process
+
+### Extract process
+```cmd
+cmd extract
+```
+
+Execute:
+```cmd
+python main.py <argument>
+```
+This create an csv file named *[argument]*_[*fecha*]_articles.csv with the data from url configured on **config.yaml**, on this example, "eluniversal2"
+
+```cmd
+python main.py eluniversal2
+```
+
+### Transform process
+
+```cmd
+cmd transform
+```
+
+Execute:
+```cmd
+python main.py <dirty_csv_filename_from_extract_process>
+```
+
+Example:
+```cmd
+python main.py eluniversal_2020_08_22_articles.csv
+```
+
+### Load process
+
+```cmd
+cmd load
+```
+
+Execute:
+```cmd
+python main.py <clean_csv_filename_from_transform_process>
+```
+
+Example:
+```cmd
+python main.py clean_eluniversal.csv
+```
+
+This create a newspaper.db file to read using sqlite
 
 ---
 
