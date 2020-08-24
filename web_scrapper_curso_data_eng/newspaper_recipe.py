@@ -1,6 +1,9 @@
 import argparse
 import hashlib
 import logging
+import nltk
+from nltk.corpus import stopwords
+
 logging.basicConfig(level=logging.INFO)
 from urllib.parse import urlparse
 
@@ -18,6 +21,8 @@ def main(filename):
     df = _fill_missing_titles(df)
     df = _generate_uids_for_rows(df)
     df = _remove_new_lines_from_body(df)
+    df = _tokenize_column(df, 'title')
+    df = _tokenize_column(df, 'body')
 
     return df
 
@@ -81,6 +86,30 @@ def _remove_new_lines_from_body(df):
                     .apply(lambda letters: ''.join(letters))
                 )
     df['body'] = stripped_body
+
+    return df
+
+def _tokenize_column(df, column_name):
+    logger.info('Calculating the number of unique tokens in {}'.format(column_name))
+
+    # nltk.download('punkt')
+    # nltk.download('stopwords')
+
+    stop_words = set(stopwords.words('spanish'))
+
+    token_column = (df
+                    .dropna()
+                    .apply(lambda row: nltk.word_tokenize(row[column_name]), axis=1)
+                    .apply(lambda tokens: list(filter(lambda token: token.isalpha(), tokens)))
+                    .apply(lambda tokens: list(map(lambda token: token.lower(), tokens)))
+                    .apply(lambda word_list: list(filter(lambda word: word not in stop_words, word_list)))
+                    .apply(lambda valid_word_list: len(valid_word_list))
+                    )
+
+    df['n_tokens_' + column_name] = token_column
+
+    print('n_tokens_' + column_name)
+    print(token_column)
 
     return df
 

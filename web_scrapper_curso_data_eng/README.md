@@ -4,6 +4,28 @@
 ## Description
 Crear un Web Scrapper profesional siguiendo el flujo de trabajo de un Ingeniero de Dato
 
+---
+
+## Importante
+Revisar la configuración de config.yaml para que funcione correctamente. Si los sitios configurados aquí han cambiado su estructura de html, podría no funcionar o dar resultados inesperados
+
+Extracto de config.yaml:
+```cmd
+eluniversal:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.field-content a'
+      article_title: '.Encabezado-Articulo h1'
+      article_body: '.field-name-body'
+```
+**homepage_article_links** : Tags que contienen los artículos para revisarlos a detalle después.
+
+**article_title**: Tags dentro de cada artículo en particular que tiene el título.
+
+**article_body**: Tags dentro de cada artículo en particular que tiene el cuerpo de la noticia.
+
+---
+
 Éste proyecto utiliza:
 
 - Python
