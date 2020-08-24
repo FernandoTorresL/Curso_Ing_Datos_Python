@@ -2,7 +2,7 @@
 # Carpeta web_scrapper_curso_data_eng
 
 ## Description
-Crear un Web Scrapper profesional siguiendo el flujo de trabajo de un Ingeniero de Dato
+Crear un Web Scrapper profesional siguiendo el flujo de trabajo de un Ingeniero de Datos
 
 ---
 
@@ -44,13 +44,13 @@ git clone git@github.com:FernandoTorresL/Curso_Ing_Datos_Python.git <my_folder>
 ### Change to working directory
 
 ```terminal
-cd web_scrapper_curso_data_eng
+cd final_project_live
 ```
 
 ---
-## Branch using_pandas
+## Branch using_databases
 ```cmd
-git checkout using_pandas
+git checkout using_databases
 ```
 
 ### How to test Web Scrapper
@@ -59,28 +59,20 @@ Utilizar algún argumento configurado en **config.yaml**
 Ejemplo: eluniversal, elpais
 
 ```cmd
-cd web_scrapper_curso_data_eng
-python main.py <arguments>
+cd final_project_live
+python pipeline.py
 ```
 
-Ejemplo: 
-```cmd
-python main.py eluniversal
-````
+Esto generará un archivo newspaper.db de sqlite
 
-Esto generará un archivo csv **[argumento]_[fecha]_articles.csv** con los encabezados *body,title, url* de la fuente de datos indicada, en éste ejemplo, "eluniversal"
-
-
-Ejecutar archivo **recipe** con:
+Para consultar la base de datos:
 
 ```cmd
-python newspaper_recipe.py <nombre_archivo_csv>
+sqlite3
+.open newspaper.db
+.tables // articles
+select * from articles;
 ```
-
-Ejemplo: 
-```cmd
-python newspaper_recipe.py eluniversal_2020_08_22_articles.csv
-````
 
 ---
 
