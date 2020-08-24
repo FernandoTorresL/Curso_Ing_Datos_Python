@@ -1,0 +1,97 @@
+news_sites:
+  elpais:
+    url: https://www.elpais.com/mexico/
+    queries:
+      homepage_article_links: '.headline a'
+      article_title: '.a_hg h1'
+      article_body: '.a_w'
+  elpais2:
+    url: https://www.elpais.com/mexico/
+    queries:
+      homepage_article_links: '.headline a'
+      article_title: '.a_hg'
+      article_body: '.a_b p'
+  eluniversal:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.field-content a'
+      article_title: '.Encabezado-Articulo h1'
+      article_body: '.field-name-body'
+  eluniversal1:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.titulo a'
+      article_title: '.ceh-Opinion h2'
+      article_body: '.field-name-body'
+  eluniversal2:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce2-Tipo1_Titulo a'
+      article_title: '.Encabezado-Articulo h1'
+      article_body: '.field-name-body'
+  eluniversal3:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce3-Tipo1_Titulo a'
+      article_title: '.Encabezado-Articulo h1'
+      article_body: '.field-name-body'
+  eluniversal3-2:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce3-Tipo2_Titulo a'
+      article_title: '.Encabezado-Articulo h1'
+      article_body: '.field-name-body'
+  eluniversal3-3:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce3-Tipo3_Titulo a'
+      article_title: '.Encabezado-Articulo h1'
+      article_body: '.field-name-body'
+  eluniversal3-6:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce3-Tipo6_Titulo a'
+      article_title: '.Encabezado-Articulo h1'
+      article_body: '.field-name-body'
+  eluniversal3-7b:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce3-Tipo7b_Titulo a'
+      article_title: '.Encabezado-Articulo h1'
+      article_body: '.field-name-body'
+  eluniversal3-7c:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce3-Tipo7b_Titulo a'
+      article_title: '.ceh-InteriorVideoCamara_Contenedor h1'
+      article_body: '.ce12-DatosArticulo p'
+  eluniversal4:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce4-Vertical_Titulo a'
+      article_title: '.Encabezado-Articulo h1'
+      article_body: '.field-name-body'
+  eluniversal6:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce6-Tipo1_Titulo a'
+      article_title: '.Encabezado-Articulo h1'
+      article_body: '.field-name-body'
+  eluniversal6-a:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce3-Tipo6_Titulo a'
+      article_title: '.field-title h1'
+      article_body: '.field-body'
+  eluniversal6-b:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce3-Tipo6_Titulo a'
+      article_title: '.post h2'
+      article_body: '.entry p'
+  eluniversal6-c:
+    url: https://www.eluniversal.com.mx
+    queries:
+      homepage_article_links: '.ce3-Tipo6_Titulo a'
+      article_title: '.block-title h1'
+      article_body: '.field-item p'
