@@ -9,6 +9,7 @@ class NewsPage:
         self._config = config()['news_sites'][news_site_uid]
         self._queries = self._config['queries']
         self._html = None
+        self._url = url
 
         self._visit(url)
 
@@ -50,3 +51,8 @@ class ArticlePage(NewsPage):
     def title(self):
         result = self._select(self._queries['article_title'])
         return result[0].text if len(result) else ''
+
+    @property
+    def url(self):
+        result = self._url
+        return result if len(result) else ''
