@@ -63,7 +63,7 @@ select * from articles;
 
 ### Extract process
 ```cmd
-cmd extract
+cd extract
 ```
 
 Execute:
@@ -79,7 +79,7 @@ python main.py eluniversal2
 ### Transform process
 
 ```cmd
-cmd transform
+cd transform
 ```
 
 Execute:
@@ -95,7 +95,7 @@ python main.py eluniversal_2020_08_22_articles.csv
 ### Load process
 
 ```cmd
-cmd load
+cd load
 ```
 
 Execute:
