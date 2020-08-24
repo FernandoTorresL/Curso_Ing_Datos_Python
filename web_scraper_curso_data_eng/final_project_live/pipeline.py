@@ -13,10 +13,14 @@ news_sites_uids = ['eluniversal',
                     'eluniversal3-3',
                     'eluniversal3-6',
                     'eluniversal3-7b',
+                    'eluniversal3-7c',
                     'eluniversal4',
                     'eluniversal6',
+                    'eluniversal6-a',
+                    'eluniversal6-b',
+                    'eluniversal6-c',
                     'elpais'
-                  ]
+                ]
 
 def main():
     _extract()
